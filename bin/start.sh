@@ -37,10 +37,10 @@ main()
   echo "step 2 : startup $projectName server"
   cd ../dist_lib
   if [[ "${timezone}" != "" ]];then
-    setsid java -jar -Xms2048m -Xmx2048m -Xss1024k -XX:SurvivorRatio=8 -XX:NewSize=1024M -Duser.timezone=${timezone} -Dclient.encoding.override=UTF-8 -Dfile.encoding=UTF-8 -Dspring.config.location=./../config/application.properties -Dlog4j.configurationFile=./../config/log4j2.yml ./${projectName}-${projectVersion}.jar > ../log/all 2>&1 &
+    java -jar -Xms2048m -Xmx2048m -Xss1024k -XX:SurvivorRatio=8 -XX:NewSize=1024M -Duser.timezone=${timezone} -Dclient.encoding.override=UTF-8 -Dfile.encoding=UTF-8 -Dspring.config.location=./../config/application.properties -Dlog4j.configurationFile=./../config/log4j2.yml ./${projectName}-${projectVersion}.jar > ../log/all.log 2>&1 &
     echo $! > ../bin/service.pid
   else
-    setsid java -jar -Xms2048m -Xmx2048m -Xss1024k -XX:SurvivorRatio=8 -XX:NewSize=1024M -Dclient.encoding.override=UTF-8 -Dfile.encoding=UTF-8 -Dspring.config.location=./../config/application.properties -Dlog4j.configurationFile=./../config/log4j2.yml ./${projectName}-${projectVersion}.jar > ../log/all.log 2>&1 &
+    java -jar -Xms2048m -Xmx2048m -Xss1024k -XX:SurvivorRatio=8 -XX:NewSize=1024M -Dclient.encoding.override=UTF-8 -Dfile.encoding=UTF-8 -Dspring.config.location=./../config/application.properties -Dlog4j.configurationFile=./../config/log4j2.yml ./${projectName}-${projectVersion}.jar > ../log/all.log 2>&1 &
     echo $! > ../bin/service.pid
   fi
   echo "startup $projectName server success"
