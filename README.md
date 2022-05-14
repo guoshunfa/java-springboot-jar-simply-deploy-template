@@ -1,6 +1,6 @@
-# Java 简单部署模版
+# Java Springboot框架 Jar文件简单部署模版
 
-Java 简单部署模版，通过简单配置，执行Jar文件，依赖框架SpringBoot。
+Java 项目，SpringBoot框架，Jar文件 简单部署模版
 
 ## 目录介绍
 
@@ -23,3 +23,7 @@ Java 简单部署模版，通过简单配置，执行Jar文件，依赖框架Spr
 1. 将自己的java项目进行打包，打包成jar文件。
 2. 将打包之后的jar文件放入dist_lib目录下。
 3. 想要个性化配置的，前往config目录下，针对配置文件进行调整。
+
+## 启动/关闭服务
+
+直接执行bin目录下的start.sh或stop.sh。
